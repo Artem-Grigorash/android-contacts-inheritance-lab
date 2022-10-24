@@ -1,5 +1,5 @@
 package ru.yandex.practicum.contacts.presentation.main;
-
+//yoo
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
