@@ -3,8 +3,9 @@ package ru.yandex.practicum.contacts.presentation.sort;
 import androidx.annotation.NonNull;
 
 import ru.yandex.practicum.contacts.presentation.base.ContactsOrderTypeUi;
+import ru.yandex.practicum.contacts.presentation.base.ListDiffInterface;
 
-public class SortTypeUI extends ContactsOrderTypeUi {
+public class SortTypeUI extends ContactsOrderTypeUi implements ListDiffInterface<SortTypeUI> {
 
     public SortTypeUI(@NonNull String type, boolean isSelected) {
         super(type,isSelected);
@@ -14,6 +15,11 @@ public class SortTypeUI extends ContactsOrderTypeUi {
     @Override
     public String createLogMessage() {
         return "Выбран тип сортировки: " + type;
+    }
+
+    @Override
+    public boolean theSameAs(SortTypeUI nextS) {
+        return this.getSortType() == nextS.getSortType();
     }
 
     @Override
